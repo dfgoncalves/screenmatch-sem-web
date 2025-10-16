@@ -1,14 +1,18 @@
 package br.com.alura.screenmatch.service;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class ConsumoApi {
+@Configuration
+public class ApiConsumer {
 
-    public String obterDados(String endereco){
+    public String getData(String endereco){
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(endereco))
